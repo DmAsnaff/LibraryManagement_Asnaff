@@ -39,7 +39,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-20dp"
+        android:layout_marginTop="10dp"
         android:text="Welcome to Bookish "
         android:textColor="@color/white"
         android:textSize="30dp"
@@ -53,7 +53,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="50dp"
         android:text="The Library Management App"
         android:textColor="@color/green"
         android:textSize="14sp"
@@ -100,12 +100,22 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="27dp"
+        android:layout_marginBottom="80dp"
         android:alpha="0.3"
-        android:textColor="@color/white"
         android:text="© Developed By DM Asnaff"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="246dp"
+        android:layout_height="305dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mylogo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

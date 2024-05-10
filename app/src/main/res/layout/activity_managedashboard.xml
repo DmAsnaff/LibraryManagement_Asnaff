@@ -7,7 +7,80 @@
     android:background="@color/bg"
     tools:context=".managedashboard">
 
+    <ImageView
+        android:id="@+id/imageViewmanb"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="-200dp"
+        android:layout_marginTop="-120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/book" />
+
+    <ImageView
+        android:id="@+id/imageViewmanpub"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="-120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/publisher" />
+
+    <ImageView
+        android:id="@+id/imageViewmamem"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/member" />
+
+    <ImageView
+        android:id="@+id/imageViewmamemq1"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="-200dp"
+        android:layout_marginTop="175dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/author" />
+
+    <ImageView
+        android:id="@+id/imageViewmamemqw1"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="-200dp"
+        android:layout_marginTop="460dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/lending" />
+
+    <ImageView
+        android:id="@+id/imageViewmamemqw1w"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="460dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/branch" />
+
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -48,15 +121,15 @@
                     android:text=" Board"
                     android:textColor="@color/green"
                     android:textSize="45sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </LinearLayout>
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="35dp">
+                android:layout_marginTop="100dp"
+                android:orientation="horizontal">
 
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -85,10 +158,84 @@
                     android:text="Manage      Publisher"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="35dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/mgtAuthor"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="left"
+                    android:layout_margin="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/red_button_background"
+                    android:text="Manage
+                Author"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/mgtMember"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="right"
+                    android:layout_margin="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/red_button_background"
+                    android:text="Manage      Members"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="35dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/mgtLending"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="left"
+                    android:layout_margin="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/red_button_background"
+                    android:text="Manage
+                Lending"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/mgtBranch"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="right"
+                    android:layout_margin="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/red_button_background"
+                    android:text="Manage       Branch"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
             </LinearLayout>
 
         </LinearLayout>
-
 
 
     </ScrollView>
