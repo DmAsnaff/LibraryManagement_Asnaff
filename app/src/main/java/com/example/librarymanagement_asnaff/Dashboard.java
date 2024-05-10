@@ -21,10 +21,10 @@ import java.util.ArrayList;
 
 public class Dashboard extends AppCompatActivity {
     RecyclerView bookRecyclerview;
-    FloatingActionButton add_button, menubtn;
+    FloatingActionButton add_button;
     //ImageView empty_imageview;
    // TextView no_data;
-    Button buttonmgt;
+
       DBHandler myDB;
     ArrayList<String> book_id, book_title, book_author, book_publisher;
     CustomAdapter customAdapter;

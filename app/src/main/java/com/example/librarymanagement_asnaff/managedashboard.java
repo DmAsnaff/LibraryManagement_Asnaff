@@ -35,6 +35,16 @@ public class managedashboard extends AppCompatActivity {
             }
         });
 
+        binding.mgtPublisher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(managedashboard.this, addPublisher.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 }
 

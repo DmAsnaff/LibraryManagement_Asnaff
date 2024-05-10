@@ -13,6 +13,15 @@
         android:theme="@style/Theme.LibraryManagement_Asnaff"
         tools:targetApi="31">
         <activity
+            android:name=".addPublisher"
+            android:exported="false" />
+        <activity
+            android:name=".publisherUpdate"
+            android:exported="false" />
+        <activity
+            android:name=".publisherDashboard"
+            android:exported="false" />
+        <activity
             android:name=".managedashboard"
             android:exported="false" />
         <activity

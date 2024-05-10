@@ -3,6 +3,7 @@ package com.example.librarymanagement_asnaff;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -17,6 +18,7 @@ public class addBook extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_book);
+        getWindow().setStatusBarColor(Color.parseColor("#2C3E50"));
 
 
         bookTitleedt = findViewById(R.id.bookTitleedt);
@@ -36,7 +38,7 @@ public class addBook extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(),Dashboard.class);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(addBook.this, "Signup Failed!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(addBook.this, "Book Add Failed!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

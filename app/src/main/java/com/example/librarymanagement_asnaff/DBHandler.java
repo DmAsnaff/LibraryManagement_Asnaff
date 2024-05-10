@@ -29,6 +29,12 @@ public class DBHandler extends SQLiteOpenHelper {
     public static final String BOOKCOLUMN_TITLE = "book_title";
     public static final String BOOKCOLUMN_AUTHOR = "book_author";
     public static final String BOOKCOLUMN_PUBLISHER = "book_publisher";
+
+    public static final String PUBLISHERTABLE_NAME = "my_publisher";
+    public static final String PUBLISHERCOLUMN_ID = "publisher_id";
+    public static final String PUBLISHERCOLUMN_NAME = "publisher_name";
+    public static final String PUBLISHERCOLUMN_ADDRESS = "publisher_address";
+    public static final String PUBLISHERCOLUMN_PHONE = "book_phone";
     @Override
     public void onCreate(SQLiteDatabase MyDatabase) {
         MyDatabase.execSQL("create Table users(fullname TEXT,email TEXT primary key, nic TEXT, password TEXT)");
@@ -40,12 +46,21 @@ public class DBHandler extends SQLiteOpenHelper {
                 BOOKCOLUMN_PUBLISHER + " TEXT);";
         MyDatabase.execSQL(query);
 
+        String querypub= "CREATE TABLE " + PUBLISHERTABLE_NAME +
+                " (" + PUBLISHERCOLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                PUBLISHERCOLUMN_NAME + " TEXT, " +
+                PUBLISHERCOLUMN_ADDRESS + " TEXT, " +
+                PUBLISHERCOLUMN_PHONE + " TEXT);";
+        MyDatabase.execSQL(querypub);
     }
     @Override
     public void onUpgrade(SQLiteDatabase MyDatabase, int i, int i1) {
         MyDatabase.execSQL("drop Table if exists users");
 
         MyDatabase.execSQL("DROP TABLE IF EXISTS " + BOOKTABLE_NAME);
+        onCreate(MyDatabase);
+
+        MyDatabase.execSQL("DROP TABLE IF EXISTS " + PUBLISHERTABLE_NAME);
         onCreate(MyDatabase);
     }
     public boolean addBookdetails(String title, String author, String publisher) {
@@ -62,6 +77,23 @@ public class DBHandler extends SQLiteOpenHelper {
             return true;
         }
     }
+
+
+
+    public boolean addPublisherdetails(String name, String address, String phone) {
+        SQLiteDatabase MyDatabase = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(PUBLISHERCOLUMN_NAME, name);
+        cv.put(PUBLISHERCOLUMN_ADDRESS, address);
+        cv.put(PUBLISHERCOLUMN_PHONE, phone);
+        long result = MyDatabase.insert(PUBLISHERTABLE_NAME, null, cv);
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     Cursor readAllData(){
         String query = "SELECT * FROM " + BOOKTABLE_NAME;
         SQLiteDatabase MyDatabase = this.getReadableDatabase();
@@ -72,21 +104,48 @@ public class DBHandler extends SQLiteOpenHelper {
       }
        return cursor;
     }
+    Cursor readAllPublisherdata(){
+        String query = "SELECT * FROM " + PUBLISHERTABLE_NAME;
+        SQLiteDatabase MyDatabase = this.getReadableDatabase();
+//
+        Cursor cursor = null;
+        if(MyDatabase != null){
+            cursor = MyDatabase.rawQuery(query, null);
+        }
+        return cursor;
+    }
 
-
-    public boolean updateBookdata(String row_id, String title, String author, String publisher){
+    public boolean updateBookdata(String row_id, String title, String author, String publisher) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(BOOKCOLUMN_TITLE, title);
         cv.put(BOOKCOLUMN_AUTHOR, author);
         cv.put(BOOKCOLUMN_PUBLISHER, publisher);
 
-        long result = db.update(BOOKTABLE_NAME, cv, "book_id=?",new String[]{row_id});
+        long result = db.update(BOOKTABLE_NAME, cv, "book_id=?", new String[]{row_id});
         if (result == -1) {
             return false;
         } else {
             return true;
         }
+    }
+
+    public boolean updatepublisherdata(String row_id, String name, String address, String phone) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(PUBLISHERCOLUMN_NAME, name);
+        cv.put(PUBLISHERCOLUMN_ADDRESS, address);
+        cv.put(PUBLISHERCOLUMN_PHONE, phone);
+
+        long result = db.update(PUBLISHERTABLE_NAME, cv, "publisher_id=?", new String[]{row_id});
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
 //    void updateBookdata(String row_id, String title, String author, String publisher){
 //        SQLiteDatabase db = this.getWritableDatabase();
 //        ContentValues cv = new ContentValues();
@@ -100,7 +159,7 @@ public class DBHandler extends SQLiteOpenHelper {
 //        }else {
 //            Toast.makeText(context, "Successfully updated", Toast.LENGTH_SHORT).show();
 //        }
-    }
+
 //        SQLiteDatabase MyDatabase = this.getWritableDatabase();
 //        ContentValues cv = new ContentValues();
 //        cv.put(BOOKCOLUMN_TITLE, title);

@@ -39,7 +39,7 @@ public class LoginPage extends AppCompatActivity {
                     Boolean checkCredentials = dbHandler.checkEmailPassword(email, password);
                     if(checkCredentials == true){
                         Toast.makeText(LoginPage.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
-                        Intent intent  = new Intent(getApplicationContext(), Dashboard.class);
+                        Intent intent  = new Intent(getApplicationContext(), managedashboard.class);
                         startActivity(intent);
                     }else{
                         Toast.makeText(LoginPage.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();

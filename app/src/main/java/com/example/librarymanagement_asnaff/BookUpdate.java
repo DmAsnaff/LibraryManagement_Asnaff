@@ -3,6 +3,7 @@ package com.example.librarymanagement_asnaff;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,7 @@ public class BookUpdate extends AppCompatActivity {
         bookAuthoredt = findViewById(R.id.bookAuthoredt2);
         bookPublisheredt = findViewById(R.id.bookPublisheredt2);
         update_button = findViewById(R.id.update_button);
+        getWindow().setStatusBarColor(Color.parseColor("#2C3E50"));
 
         getAndSetIntentData();
 

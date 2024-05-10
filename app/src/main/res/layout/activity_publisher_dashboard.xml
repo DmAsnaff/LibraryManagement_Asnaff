@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".publisherDashboard">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg"
+        tools:context=".Dashboard">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-695dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView5pud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Publisher"
+                android:textColor="@color/blue"
+                android:textSize="45sp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:id="@+id/textView6pud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text=" Details"
+                android:textColor="@color/green"
+                android:textSize="45sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_publisher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/baseline_add"
+            app:tint="@color/green" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/publisherRecyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="37dp"
+            android:paddingTop="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+        <!--        android:id="@+id/menubtn"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:clickable="true"-->
+        <!--        android:focusable="true"-->
+        <!--        android:layout_marginTop="30dp"-->
+        <!--        android:layout_marginStart="16dp"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:backgroundTint="@color/bg"-->
+        <!--        app:layout_constraintTop_toTopOf="parent"-->
+        <!--        app:srcCompat="@drawable/managedash" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
