@@ -48,14 +48,7 @@ public class Dashboard extends AppCompatActivity {
             }
 
         });
-        buttonmgt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, managedashboard.class);
-                startActivity(intent);
-            }
-
-        });
+ 
 
 
 
